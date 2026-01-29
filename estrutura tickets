@@ -1,0 +1,10 @@
+/tickets
+├─ tickets.js          # cria / fecha ticket
+├─ panelHandler.js     # botão do ticket
+
+/commands
+├─ ticketpanel.js      # envia painel
+
+/panel
+├─ server.js
+└─ config.json         # mensagem do painel
