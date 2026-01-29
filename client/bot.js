@@ -35,3 +35,5 @@ client.on("messageCreate", msg => {
 });
 
 module.exports = client;
+
+require("../tickets/panelHandler")(client);
