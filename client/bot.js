@@ -56,3 +56,7 @@ client.login(process.env.DISCORD_TOKEN);
 
 module.exports = client;
 
+client.on("messageCreate", msg => {
+  console.log("Mensagem recebida:", msg.content);
+
+
