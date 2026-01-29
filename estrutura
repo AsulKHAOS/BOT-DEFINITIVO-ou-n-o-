@@ -1,0 +1,18 @@
+/bot
+├─ index.js                # inicia tudo
+├─ config.json             # configs do bot
+├─ /client
+│   ├─ bot.js              # login e eventos
+│   ├─ music.js            # sistema de música
+│   └─ moderation.js       # moderação
+├─ /commands
+│   ├─ tickets.js
+│   ├─ moderation.js
+│   ├─ utility.js
+│   ├─ fun.js
+│   ├─ info.js
+│   └─ music.js
+├─ /panel
+│   ├─ server.js
+│   └─ public/index.html
+└─ package.json
