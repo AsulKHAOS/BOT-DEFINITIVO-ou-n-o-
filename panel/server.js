@@ -1,23 +1,35 @@
 const express = require("express");
-const fs = require("fs");
 const app = express();
+const path = require("path");
+
+const bot = require("../client/bot");
+const config = require("./config.json");
 
 app.use(express.json());
-app.use(express.static("panel/public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/config", (req, res) => {
-  const config = require("./config.json");
-  res.json(config);
+// 🌐 FRONTEND
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/config", (req, res) => {
-  fs.writeFileSync(
-    "./panel/config.json",
-    JSON.stringify(req.body, null, 2)
-  );
-  res.send("Configuração salva!");
+// 🤖 STATUS DO BOT (API)
+app.get("/api/status", (req, res) => {
+  res.json({
+    online: bot.isReady(),
+    ping: bot.ws.ping,
+    servers: bot.guilds.cache.size,
+    status: config.general.status
+  });
 });
 
-app.listen(3000, () => {
-  console.log("🎛️ Painel online");
+// 🔄 REINICIAR BOT (API)
+app.post("/api/restart", (req, res) => {
+  res.json({ ok: true });
+  process.exit(0); // Render reinicia automaticamente
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("🌐 Dashboard online na porta " + PORT);
 });
