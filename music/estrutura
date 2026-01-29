@@ -1,0 +1,14 @@
+/music
+└─ player.js
+
+/commands
+├─ play.js
+├─ pause.js
+├─ resume.js
+├─ skip.js
+├─ stop.js
+├─ queue.js
+├─ nowplaying.js
+├─ volume.js
+├─ loop.js
+└─ leave.js
