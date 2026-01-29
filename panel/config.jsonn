@@ -1,0 +1,30 @@
+{
+  "general": {
+    "prefix": "!",
+    "status": "Online 24/7 🚀"
+  },
+
+  "tickets": {
+    "enabled": true,
+    "panelMessage": "🎟️ Clique no botão abaixo para abrir um ticket",
+    "panelChannelId": "",
+    "categoryName": "Tickets"
+  },
+
+  "music": {
+    "enabled": true,
+    "defaultVolume": 50,
+    "defaultLoop": "off"
+  },
+
+  "moderation": {
+    "enabled": true,
+    "commands": {
+      "ban": true,
+      "kick": true,
+      "mute": true,
+      "warn": true,
+      "clear": true
+    }
+  }
+}
