@@ -37,3 +37,6 @@ client.on("messageCreate", msg => {
 module.exports = client;
 
 require("../tickets/panelHandler")(client);
+
+const config = require("../panel/config.json");
+
