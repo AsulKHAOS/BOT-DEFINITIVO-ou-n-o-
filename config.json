@@ -1,4 +1,6 @@
 {
-  "prefix": "!",
-  "status": "Online 24/7 🚀"
+  "general": {
+    "prefix": "!",
+    "status": "🤖 Bot online"
+  }
 }
