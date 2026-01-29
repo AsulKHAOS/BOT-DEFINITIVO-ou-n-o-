@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard do Bot</title>
+  <script defer src="app.js"></script>
+  <style>
+    body { background:#020617;color:white;font-family:Arial;padding:20px }
+    .card { background:#0f172a;padding:20px;border-radius:10px;margin-bottom:20px }
+    input,textarea,button { width:100%;margin-top:8px;padding:8px;border-radius:5px;border:none }
+    button { background:#2563eb;color:white;cursor:pointer }
+  </style>
+</head>
+<body>
+
+<h1>🎛️ Dashboard do Bot</h1>
+
+<div class="card">
+  <h2>🤖 Bot</h2>
+  <p id="botStatus">Carregando...</p>
+  <button onclick="restart()">🔄 Reiniciar Bot</button>
+</div>
+
+<div class="card">
+  <h2>⚙️ Geral</h2>
+  <input id="prefix" placeholder="Prefixo">
+  <input id="status" placeholder="Status do bot">
+  <button onclick="save()">💾 Salvar</button>
+</div>
+
+<div class="card">
+  <h2>🎟️ Tickets</h2>
+  <input id="ticketChannel" placeholder="ID do canal do painel">
+  <textarea id="ticketMessage"></textarea>
+  <button onclick="sendPanel()">📨 Enviar painel</button>
+</div>
+
+<div class="card">
+  <h2>🎵 Música</h2>
+  <input id="volume" placeholder="Volume padrão">
+  <select id="loop">
+    <option value="off">Off</option>
+    <option value="song">Música</option>
+    <option value="queue">Fila</option>
+  </select>
+</div>
+
+</body>
+</html>
