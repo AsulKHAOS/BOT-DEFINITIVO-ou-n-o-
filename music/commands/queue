@@ -1,0 +1,16 @@
+const { queues } = require("../music/player");
+
+module.exports = {
+  name: "queue",
+  execute(client, msg) {
+    const queue = queues.get(msg.guild.id);
+    if (!queue || !queue.songs.length)
+      return msg.reply("❌ Fila vazia.");
+
+    const list = queue.songs
+      .map((s, i) => `${i === 0 ? "▶️" : `${i}.`} ${s.title}`)
+      .join("\n");
+
+    msg.channel.send(`🎵 **Fila:**\n${list}`);
+  }
+};
